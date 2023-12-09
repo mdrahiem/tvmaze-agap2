@@ -1,24 +1,36 @@
 import { Provider } from "react-redux";
-import { Route, Routes } from "react-router";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout";
-import NoMatch from "./components/no-match";
-import EpisodesList from "./routes/episode-list";
+import EpisodeDetails from "./routes/episode-details";
 import Home from "./routes/home";
-import ShowDetail from "./routes/show-detail";
+import ShowDetails from "./routes/show-details";
 import { store } from "./store";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "show/:showId",
+        element: <ShowDetails />,
+      },
+      {
+        path: ":showId/episode/:episodeId",
+        element: <EpisodeDetails />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <Provider store={store}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="show-details/:id" element={<ShowDetail />}>
-            <Route path="episodes" element={<EpisodesList />} />
-          </Route>
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
+      <RouterProvider router={router} />
     </Provider>
   );
 }

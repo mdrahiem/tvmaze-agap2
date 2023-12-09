@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Error from "../components/error";
 import Loader from "../components/loading";
 import { useGetShowsListQuery } from "../services/tvmaze";
@@ -13,10 +14,10 @@ const Home: React.FC = () => {
         <Loader text="Loading..." />
       ) : data && data.length > 0 ? (
         data.map((item) => (
-          <a href={`/show-details/${item?.show?.id}`}>
+          <Link to={`/show/${item?.show?.id}`} preventScrollReset>
             <h3>{item?.show?.id}</h3>
             <img src={item?.show?.image?.original} alt={item?.show?.name} />
-          </a>
+          </Link>
         ))
       ) : null}
     </div>

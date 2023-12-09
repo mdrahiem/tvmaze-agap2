@@ -48,7 +48,35 @@ export const searchShowResponseSchema = z.array(
     show: showSingleSchema,
   })
 );
+
 export const showDetailsResponseSchema = showSingleSchema;
+
+export const episodeSchema = z.object({
+  id: z.number(),
+  url: z.string(),
+  name: z.string(),
+  season: z.number(),
+  number: z.number(),
+  type: z.string(),
+  airdate: z.string(),
+  airtime: z.string(),
+  airstamp: z.string(),
+  runtime: z.number(),
+  rating: z.object({ average: z.number() }),
+  image: z.object({ medium: z.string(), original: z.string() }),
+  summary: z.string(),
+  _links: z.object({
+    self: z.object({ href: z.string() }),
+    show: z.object({ href: z.string() }),
+  }),
+});
+export const showEpisodesResponseSchema = z.array(episodeSchema);
+
+export const episodeDetailsResponseSchema = episodeSchema;
 
 export type SearchShowResponse = z.infer<typeof searchShowResponseSchema>;
 export type ShowDetailsResponse = z.infer<typeof showDetailsResponseSchema>;
+export type ShowEpisodesResponse = z.infer<typeof showEpisodesResponseSchema>;
+export type EpisodeDetailsResponse = z.infer<
+  typeof episodeDetailsResponseSchema
+>;

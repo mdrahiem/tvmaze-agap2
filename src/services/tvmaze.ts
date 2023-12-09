@@ -1,7 +1,12 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BASE_URL } from "../utils/consts";
-import { SearchShowResponse, ShowDetailsResponse } from "./schema";
+import {
+  EpisodeDetailsResponse,
+  SearchShowResponse,
+  ShowDetailsResponse,
+  ShowEpisodesResponse,
+} from "./schema";
 
 // Define a service using a base URL and expected endpoints
 export const tvMazeApi = createApi({
@@ -14,9 +19,20 @@ export const tvMazeApi = createApi({
     getShowDetails: builder.query<ShowDetailsResponse, number>({
       query: (id) => `shows/${id}`,
     }),
+    getShowEpisodes: builder.query<ShowEpisodesResponse, number>({
+      query: (id) => `shows/${id}/episodes`,
+    }),
+    getEpisodeDetails: builder.query<EpisodeDetailsResponse, number>({
+      query: (id) => `episodes/${id}`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetShowsListQuery, useGetShowDetailsQuery } = tvMazeApi;
+export const {
+  useGetShowsListQuery,
+  useGetShowDetailsQuery,
+  useGetShowEpisodesQuery,
+  useGetEpisodeDetailsQuery,
+} = tvMazeApi;
