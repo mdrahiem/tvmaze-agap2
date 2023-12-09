@@ -1,20 +1,23 @@
 import React from "react";
+import Error from "../components/error";
+import Loader from "../components/loading";
 import { useGetShowsListQuery } from "../services/tvmaze";
 
 const Home: React.FC = () => {
   const { data, error, isLoading } = useGetShowsListQuery("powerpuff girls");
-  console.log(data);
   return (
     <div className="App">
       {error ? (
-        <>Oh no, there was an error</>
+        <Error>Sorry...</Error>
       ) : isLoading ? (
-        <>Loading...</>
+        <Loader text="Loading..." />
       ) : data && data.length > 0 ? (
-        <>
-          <h3>{data[0]?.show?.id}</h3>
-          <img src={data[0]?.show?.image?.original} alt={data[0]?.show?.name} />
-        </>
+        data.map((item) => (
+          <a href={`/show-details/${item?.show?.id}`}>
+            <h3>{item?.show?.id}</h3>
+            <img src={item?.show?.image?.original} alt={item?.show?.name} />
+          </a>
+        ))
       ) : null}
     </div>
   );

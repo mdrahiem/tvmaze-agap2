@@ -1,17 +1,29 @@
 import React from "react";
 import { useParams } from "react-router";
+import Error from "../components/error";
+import Loader from "../components/loading";
+import { useGetShowDetailsQuery } from "../services/tvmaze";
 
 const ShowDetail: React.FC = () => {
-  // fetch id from the params
-  // fetch show details from the API
   const { id } = useParams();
+  const { data, error, isLoading } = useGetShowDetailsQuery(
+    parseInt(id ?? "0")
+  );
   return (
-    <div>
-      Show details page {id}
-      {/* <h2>{showInfo.title}</h2>
-      <p>{showInfo.description}</p>
-      <p>Rating: {showInfo.rating}</p>
-      <p>Genres: {showInfo.genres.join(", ")}</p> */}
+    <div className="App">
+      {error ? (
+        <Error>Sorry...</Error>
+      ) : isLoading ? (
+        <Loader text="Loading..." />
+      ) : (
+        <div>
+          <h1>{data?.name}</h1>
+          <br />
+          <img src={data?.image?.original} alt="" />
+          <p>{data?.summary}</p>
+          {data?.rating?.average}
+        </div>
+      )}
     </div>
   );
 };
