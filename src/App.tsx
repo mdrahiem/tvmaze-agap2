@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   }
 ])
 
-function App(): JSX.Element {
+function App (): JSX.Element {
   return (
     <Provider store={store}>
       <RouterProvider router={router} />

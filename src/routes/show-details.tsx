@@ -14,7 +14,7 @@ const ShowDetails: React.FC = () => {
   const { data: showEpisodesData, error: showEpisodesError, isLoading: showEpisodesLoading } = useGetShowEpisodesQuery(parseInt(showId ?? '0'))
   return (
     <div className="App">
-      {showDetailsError || showEpisodesError ? (
+      {showDetailsError ?? showEpisodesError ? (
         <Error>Sorry...</Error>
       ) : showDetailsLoading || showEpisodesLoading ? (
         <Loader text="Loading..." />
@@ -76,7 +76,7 @@ const ShowDetails: React.FC = () => {
             <h2>Episodes</h2>
             <EpisodesContainer>
               {showEpisodesData?.map((episode, index) => (
-                <EpisodeItem>
+                <EpisodeItem key={episode.id}>
                   <Link to={`/${showId}/episode/${episode.id}`} key={episode.id}>
                     {index + 1}. {episode.name}
                   </Link>

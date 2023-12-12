@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import bg from '../../assets/bg.jpg'
 
-function LayoutComponent({ children }: { children: React.ReactNode }) {
+function LayoutComponent({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <LayoutContainer>
       <LayoutInner>{children}</LayoutInner>

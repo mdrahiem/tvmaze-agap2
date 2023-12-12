@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           <CardsContainer>
             {data && data.length > 0
               ? data.map(item => (
-                  <Link to={`/show/${item?.show?.id}`} style={{ textDecoration: 'none' }}>
+                  <Link to={`/show/${item?.show?.id}`} style={{ textDecoration: 'none' }} key={item.show.id}>
                     <HomeCard title={item?.show?.name} imgUrl={item?.show?.image?.original} />
                   </Link>
                 ))

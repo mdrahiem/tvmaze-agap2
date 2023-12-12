@@ -3,7 +3,7 @@
 import { Outlet } from 'react-router-dom'
 import LayoutComponent from '../components/reusable/layout'
 
-function Layout() {
+function Layout(): JSX.Element {
   return (
     <LayoutComponent>
       {/* An <Outlet> renders whatever child route is currently active. */}
