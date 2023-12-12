@@ -6,6 +6,7 @@ import Error from '../components/error'
 import HomeCard from '../components/home-card'
 import Loader from '../components/loading'
 import { useGetShowsListQuery } from '../services/tvmaze'
+import { mq } from '../utils/consts'
 
 const Home: React.FC = () => {
   const { data, error, isLoading } = useGetShowsListQuery('powerpuff girls')
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
         <>
           <HomeHeader>
             <nav>
-              <ul>
+              <ul style={{ padding: 0, margin: 0 }}>
                 <li
                   style={{
                     display: 'flex',
@@ -58,19 +59,29 @@ const HomeHeader = styled.div({
 
 const CardsContainer = styled.div({
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+  [mq[0]]: {
+    gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))'
+  },
+  [mq[1]]: {
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))'
+  },
   gridGap: '1rem'
 })
 
 const LogoContainer = styled.div({
-  width: '400px',
-  height: '300px',
+  width: '300px',
+  height: '150px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   '& img': {
     width: '100%',
     height: 'auto'
+  },
+  [mq[0]]: {
+    width: '400px',
+    height: '300px'
   }
 })
 

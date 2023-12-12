@@ -63,8 +63,8 @@ yarn lint
 3. ESLint for linting
 4. Emotion for styling (css-in-js)
 5. Retrieved data from TVMaze api
-6. Mobile responsive with one break point
-7. Hosted using AWS Amplify
+6. Mobile responsive with two break points (576, 768)
+7. Hosted using AWS Amplify at [url]("https://main.d21dv8g242zxzk.amplifyapp.com/")
 
 
 

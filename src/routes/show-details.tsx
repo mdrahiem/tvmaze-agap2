@@ -7,6 +7,7 @@ import Error from '../components/error'
 import Loader from '../components/loading'
 import BackLink from '../components/reusable/back-link'
 import { useGetShowDetailsQuery, useGetShowEpisodesQuery } from '../services/tvmaze'
+import { mq } from '../utils/consts'
 
 const ShowDetails: React.FC = () => {
   const { showId } = useParams()
@@ -92,7 +93,10 @@ const ShowDetails: React.FC = () => {
 
 const ShowDetailsContainer = styled.div({
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
+  gridTemplateColumns: '1fr',
+  [mq[1]]: {
+    gridTemplateColumns: '1fr 1fr'
+  },
   gridGap: '1rem'
 })
 
@@ -105,7 +109,10 @@ const ShowDetailsImage = styled.div({
 })
 
 const EpisodesContainer = styled.div({
-  columnCount: 2,
+  columnCount: 1,
+  [mq[0]]: {
+    columnCount: 2
+  },
   columnGap: '1rem'
 })
 
