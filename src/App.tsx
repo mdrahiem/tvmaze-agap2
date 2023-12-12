@@ -1,15 +1,17 @@
-import {Provider} from 'react-redux'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
-import Layout from './components/layout'
+import { Provider } from 'react-redux'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import NoMatch from './components/no-match'
 import EpisodeDetails from './routes/episode-details'
 import Home from './routes/home'
+import Layout from './routes/layout'
 import ShowDetails from './routes/show-details'
-import {store} from './store'
+import { store } from './store'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    errorElement: <NoMatch />,
     children: [
       {
         index: true,
