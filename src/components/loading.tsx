@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 interface LoaderProps {
-  text?: string;
+  text?: string
 }
 
 const Loader: React.FC<LoaderProps> = ({ text }) => {
@@ -10,7 +10,7 @@ const Loader: React.FC<LoaderProps> = ({ text }) => {
       <div className="loader-spinner"></div>
       {text && <div className="loader-text">{text}</div>}
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

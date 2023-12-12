@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod'
 
 export const showSingleSchema = z.object({
   id: z.number(),
@@ -22,34 +22,34 @@ export const showSingleSchema = z.object({
     country: z.object({
       name: z.string(),
       code: z.string(),
-      timezone: z.string(),
+      timezone: z.string()
     }),
-    officialSite: z.null(),
+    officialSite: z.null()
   }),
   webChannel: z.null(),
   dvdCountry: z.null(),
   externals: z.object({
     tvrage: z.null(),
     thetvdb: z.number(),
-    imdb: z.string(),
+    imdb: z.string()
   }),
   image: z.object({ medium: z.string(), original: z.string() }),
   summary: z.string(),
   updated: z.number(),
   _links: z.object({
     self: z.object({ href: z.string() }),
-    previousepisode: z.object({ href: z.string() }),
-  }),
-});
+    previousepisode: z.object({ href: z.string() })
+  })
+})
 
 export const searchShowResponseSchema = z.array(
   z.object({
     score: z.number(),
-    show: showSingleSchema,
+    show: showSingleSchema
   })
-);
+)
 
-export const showDetailsResponseSchema = showSingleSchema;
+export const showDetailsResponseSchema = showSingleSchema
 
 export const episodeSchema = z.object({
   id: z.number(),
@@ -67,16 +67,14 @@ export const episodeSchema = z.object({
   summary: z.string(),
   _links: z.object({
     self: z.object({ href: z.string() }),
-    show: z.object({ href: z.string() }),
-  }),
-});
-export const showEpisodesResponseSchema = z.array(episodeSchema);
+    show: z.object({ href: z.string() })
+  })
+})
+export const showEpisodesResponseSchema = z.array(episodeSchema)
 
-export const episodeDetailsResponseSchema = episodeSchema;
+export const episodeDetailsResponseSchema = episodeSchema
 
-export type SearchShowResponse = z.infer<typeof searchShowResponseSchema>;
-export type ShowDetailsResponse = z.infer<typeof showDetailsResponseSchema>;
-export type ShowEpisodesResponse = z.infer<typeof showEpisodesResponseSchema>;
-export type EpisodeDetailsResponse = z.infer<
-  typeof episodeDetailsResponseSchema
->;
+export type SearchShowResponse = z.infer<typeof searchShowResponseSchema>
+export type ShowDetailsResponse = z.infer<typeof showDetailsResponseSchema>
+export type ShowEpisodesResponse = z.infer<typeof showEpisodesResponseSchema>
+export type EpisodeDetailsResponse = z.infer<typeof episodeDetailsResponseSchema>
