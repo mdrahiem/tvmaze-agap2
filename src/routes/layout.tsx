@@ -3,6 +3,10 @@
 import { Outlet } from 'react-router-dom'
 import LayoutComponent from '../components/reusable/layout'
 
+/*
+ * Renders layout component
+ * @returns Layout component
+ */
 function Layout(): JSX.Element {
   return (
     <LayoutComponent>

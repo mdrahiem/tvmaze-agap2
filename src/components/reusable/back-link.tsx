@@ -8,7 +8,7 @@ interface BackLinkProps {
 
 const BackLink: React.FC<BackLinkProps> = ({ link, children }: BackLinkProps) => {
   return (
-    <BackLinkContainer>
+    <BackLinkContainer data-testid="back-link">
       <Link to={link ?? '/'} style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

@@ -20,6 +20,12 @@ interface CardProps {
   imgUrl: string
 }
 
+/**
+ * Renders a card component
+ * @param title, imgUrl
+ * @returns HomeCard component
+ */
+
 const HomeCard: React.FC<CardProps> = ({ title, imgUrl }) => {
   return (
     <Card>

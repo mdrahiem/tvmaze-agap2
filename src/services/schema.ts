@@ -12,9 +12,9 @@ export const showSingleSchema = z.object({
   averageRuntime: z.number(),
   premiered: z.string(),
   ended: z.string(),
-  officialSite: z.string(),
+  officialSite: z.string().nullable(),
   schedule: z.object({ time: z.string(), days: z.array(z.string()) }),
-  rating: z.object({ average: z.number() }),
+  rating: z.object({ average: z.number().nullable() }),
   weight: z.number(),
   network: z.object({
     id: z.number(),
@@ -29,7 +29,7 @@ export const showSingleSchema = z.object({
   webChannel: z.null(),
   dvdCountry: z.null(),
   externals: z.object({
-    tvrage: z.null(),
+    tvrage: z.number().nullable(),
     thetvdb: z.number(),
     imdb: z.string()
   }),
@@ -62,7 +62,7 @@ export const episodeSchema = z.object({
   airtime: z.string(),
   airstamp: z.string(),
   runtime: z.number(),
-  rating: z.object({ average: z.number() }),
+  rating: z.object({ average: z.number().nullable() }),
   image: z.object({ medium: z.string(), original: z.string() }),
   summary: z.string(),
   _links: z.object({

@@ -9,6 +9,10 @@ import BackLink from '../components/reusable/back-link'
 import { useGetShowDetailsQuery, useGetShowEpisodesQuery } from '../services/tvmaze'
 import { mq } from '../utils/consts'
 
+/**
+ * Renders show details page
+ * @returns Show details component
+ */
 const ShowDetails: React.FC = () => {
   const { showId } = useParams()
   const { data: showData, error: showDetailsError, isLoading: showDetailsLoading } = useGetShowDetailsQuery(parseInt(showId ?? '0'))

@@ -6,6 +6,7 @@ import type { EpisodeDetailsResponse, SearchShowResponse, ShowDetailsResponse, S
 // Define a service using a base URL and expected endpoints
 export const tvMazeApi = createApi({
   reducerPath: 'tvMazeApi',
+  tagTypes: ['Shows'],
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: builder => ({
     getShowsList: builder.query<SearchShowResponse, string>({

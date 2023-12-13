@@ -24,7 +24,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-  return <CardContainer>{children}</CardContainer>
+  return <CardContainer data-testid="card-single">{children}</CardContainer>
 }
 
 export default Card

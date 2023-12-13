@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home page 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`renders show details page 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    Loading...
+  </div>
+</div>
+`;

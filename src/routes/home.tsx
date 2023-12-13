@@ -8,6 +8,10 @@ import Loader from '../components/loading'
 import { useGetShowsListQuery } from '../services/tvmaze'
 import { mq } from '../utils/consts'
 
+/**
+ * Renders home page
+ * @returns Home component
+ */
 const Home: React.FC = () => {
   const { data, error, isLoading } = useGetShowsListQuery('powerpuff girls')
   return (

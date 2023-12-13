@@ -8,9 +8,12 @@ import Loader from '../components/loading'
 import BackLink from '../components/reusable/back-link'
 import { useGetEpisodeDetailsQuery } from '../services/tvmaze'
 
+/**
+ * Renders episode details page
+ * @returns Episode details component
+ */
 const EpisodeDetails: React.FC = () => {
   const { episodeId, showId } = useParams()
-  console.log(episodeId, 'episodeId', showId, 'showId')
   const { data: episodeData, error: episodeDetailsError, isLoading: episodeDetailsLoading } = useGetEpisodeDetailsQuery(parseInt(episodeId ?? '0'))
 
   const summaryText = episodeData?.summary ? parse(episodeData?.summary) : <p>No summary available!</p>
