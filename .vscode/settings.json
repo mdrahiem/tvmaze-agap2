@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "css.validate": false,
+    "scss.validate": false,
+    "eslint.enable": true,
+    "eslint.validate": [
+      "javascript",
+      "typescript",
+      "typescriptreact"
+    ],    
+  }

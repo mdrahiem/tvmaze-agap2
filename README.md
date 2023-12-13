@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# Powerpuff Girls - TVMaze App
+### Introduction
+Provide a brief overview of what your project is about. Explain its purpose and main features.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Prerequisites
+Yarn, Node 16+ and IDE (preferably VS Code)
 
-## Available Scripts
+### Setup & Run the project
 
-In the project directory, you can run:
+1. Clone the repository:
+```sh 
+git clone https://github.com/mdrahiem/tvmaze-agap2.git
+```
 
-### `yarn start`
+2. Navigate into the project directory:
+```sh
+cd tvmaze-agap2
+```
 
+3. Install the dependencies:
+```sh
+yarn install
+```
+
+4. Run the project
+```sh
+yarn start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
-
+5. Running the Tests
+```sh
+yarn test
+```
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+6. Checking lint warnings/errors
+```sh
+yarn lint
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `src/`: This directory contains all the source code for the project.
+  - `App.tsx`: This is the main component of the application.
+  - `components/`: This directory contains all the React components used in routes.
+    - `reusable/`: This is for reusable components like card, button, link etc.
+  - `services/`: This directory contains the api schema and TVMaze api implementation using RTK Query (A successor to Redux)
+  - `routes/`: This directory contains the different routes of the application.
+  - `utils/`: This directory contains utility functions and constants.
+  - `assets/`: This directory contains images/assets used in the project.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Tools used
+1. Create-react-app with Typescript template to bootstrap the project.
+2. React-router for the routing setup of the application.
+3. ESLint for linting
+4. Emotion for styling (css-in-js)
+5. Retrieved data from TVMaze api
+6. Mobile responsive with two break points (576, 768)
+7. Hosted using AWS Amplify at [url]("https://main.d21dv8g242zxzk.amplifyapp.com/")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contributing
+Feel free to create a PR if you find something can be improved. TIA.
