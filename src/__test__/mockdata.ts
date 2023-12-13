@@ -171,38 +171,3 @@ export const responseData = [
     }
   }
 ]
-
-export type SearchShowResponse = Array<{
-  score: number
-  show: {
-    status: string
-    type: string
-    id: number
-    url: string
-    name: string
-    language: string
-    genres: string[]
-    runtime: number
-    averageRuntime: number
-    premiered: string
-    ended: string
-    officialSite: string | null
-    schedule: {
-      time: string
-      days: string[]
-    }
-    rating: {
-      average: number | null
-    }
-    weight: number
-
-    _links: {
-      self: {
-        href: string
-      }
-      previousepisode: {
-        href: string
-      }
-    }
-  }
-}>

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-// import bg from '../../assets/bg.jpg'
+import bg from '../../assets/bg.jpg'
 
 function LayoutComponent({ children }: { children: React.ReactNode }): JSX.Element {
   return (
@@ -11,8 +11,8 @@ function LayoutComponent({ children }: { children: React.ReactNode }): JSX.Eleme
 
 const LayoutContainer = styled.div({
   minHeight: '100vh',
-  // backgroundImage: `url(${bg})`,
-  background: 'linear-gradient(90deg, #02aab0 0%, #00cdac 100%)',
+  backgroundImage: `url(${bg})`,
+  // background: 'linear-gradient(90deg, #02aab0 0%, #00cdac 100%)', // optional gradient background
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',

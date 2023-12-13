@@ -35,7 +35,8 @@ module.exports = {
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/space-before-function-paren": "off",
         "multiline-ternary": "off",
-        "@typescript-eslint/no-non-null-assertion": "off"
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "non-nullable-type-assertion-style": "off"
     },
     root: true,
 }
