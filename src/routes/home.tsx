@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.webp'
 import Error from '../components/error'
 import HomeCard from '../components/home-card'
 import Loader from '../components/loading'

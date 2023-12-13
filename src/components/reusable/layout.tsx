@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import bg from '../../assets/bg.jpg'
+import bg from '../../assets/bg.webp'
 
 function LayoutComponent({ children }: { children: React.ReactNode }): JSX.Element {
   return (
